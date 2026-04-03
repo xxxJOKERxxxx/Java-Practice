@@ -2,8 +2,8 @@ package loops;
 
 public class LoopsPractice {
     public static void main(String[] args) {
-        //taskWhileExample();
-       // taskForExample();
+        taskWhileExample();
+        taskForExample();
         taskDoWhileExample();
         taskDifferenceExample();
     }
