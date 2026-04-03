@@ -2,10 +2,15 @@ package loops;
 
 public class LoopsPractice {
     public static void main(String[] args) {
+        // === ПРИМЕРЫ ИЗ УРОКА ===
+        /*
         taskWhileExample();
         taskForExample();
         taskDoWhileExample();
         taskDifferenceExample();
+        */
+        System.out.println("========== МОЯ ПРАКТИКА ==========");
+        findNumber();
     }
     public static void taskWhileExample() {
         System.out.println("=== Цикл while ===");
@@ -69,6 +74,26 @@ public class LoopsPractice {
             System.out.println("do-while: i = " + i);  // выполнится ОДИН раз
         } while (i <= 5);
         System.out.println("do-while: выполнился один раз, потом проверил условие и вышел");
+    }
+
+    // ========== МОЯ ПРАКТИКА ==========
+    public static void findNumber() {
+        int[] numbers = {3, 7, 1, 9, 5};  // массив чисел
+        int target = 17;                     // искомое число
+        boolean found = false;              // флаг: пока не нашли
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == target) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println("Найдено");
+        } else {
+            System.out.println("Не найдено");
+        }
     }
 
 }
