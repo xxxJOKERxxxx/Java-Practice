@@ -19,8 +19,9 @@ public class ConditionsTasks {
 
         //taskIfExample();      // Примеры if, if-else, if-else-if, switch, ternary
 
-         taskSeasons();     // Задача: времена года (пока закомментирована)
-        // taskEvenOdd();     // Задача: чётное/нечётное (пока закомментирована)
+         //taskSeasons();     // Задача: времена года (пока закомментирована)
+
+         taskEvenOdd();     // Задача: чётное/нечётное (пока закомментирована)
     }
 
     // ==================== ПРИМЕРЫ РАЗНЫХ КОНСТРУКЦИЙ ====================
@@ -128,7 +129,9 @@ public class ConditionsTasks {
      * Задача 2: Проверка чётности числа
      */
     public static void taskEvenOdd() {
-        // Здесь будет код задачи
+        int number = 7;
+        String result = (number % 2 == 0) ? "чётное" : "нечётное";
+        System.out.println("Число " + number + " — " + result);
     }
 
 }
