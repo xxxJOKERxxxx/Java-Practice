@@ -3,14 +3,14 @@ package loops;
 public class LoopsPractice {
     public static void main(String[] args) {
         // === ПРИМЕРЫ ИЗ УРОКА ===
-        /*
-        taskWhileExample();
+        /*   taskWhileExample();
         taskForExample();
         taskDoWhileExample();
         taskDifferenceExample();
-        */
+
         System.out.println("========== МОЯ ПРАКТИКА ==========");
-        findNumber();
+        findNumber();   */
+        calculateSum();
     }
     public static void taskWhileExample() {
         System.out.println("=== Цикл while ===");
@@ -77,6 +77,7 @@ public class LoopsPractice {
     }
 
     // ========== МОЯ ПРАКТИКА ==========
+    // "поиск числа в массиве"
     public static void findNumber() {
         int[] numbers = {3, 7, 1, 9, 5};  // массив чисел
         int target = 17;                     // искомое число
@@ -94,6 +95,18 @@ public class LoopsPractice {
         } else {
             System.out.println("Не найдено");
         }
+    }
+
+    //Задача 2: "Сумма чисел от 1 до N" Компьютер должен сложить все числа подряд, начиная с 1, заканчивая тем числом N, которое ввел пользователь.
+    public static void calculateSum() {
+        int sum = 0; // сюда будем добавлять
+        int n = 5; //  до какого числа складываем
+        for (int i = 1; i <= n; i++) { // На каждой итерации прибавлять текущее число к sum
+            sum= sum + i;
+        }
+
+        System.out.println("Сумма чисел от 1 до " + n + " = " + sum);
+
     }
 
 }
