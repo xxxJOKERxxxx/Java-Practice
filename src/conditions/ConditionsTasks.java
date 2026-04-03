@@ -17,9 +17,9 @@ public class ConditionsTasks {
 
         // Раскомментируй нужную задачу, закомментируй ненужные
 
-        taskIfExample();      // Примеры if, if-else, if-else-if, switch, ternary
+        //taskIfExample();      // Примеры if, if-else, if-else-if, switch, ternary
 
-        // taskSeasons();     // Задача: времена года (пока закомментирована)
+         taskSeasons();     // Задача: времена года (пока закомментирована)
         // taskEvenOdd();     // Задача: чётное/нечётное (пока закомментирована)
     }
 
@@ -93,7 +93,7 @@ public class ConditionsTasks {
         System.out.println(dayName);  // выводим результат
 
         System.out.println("\n========== ПРИМЕР 5: Тернарный оператор ==========");
-        // Пример 5: тернарный оператор (условие ? если_правда : если_ложь)
+        // Пример 5: тернарный оператор (условие ? если правда : если_ложь)
         int age2 = 20;  // переменная для возраста
         // Тернарный оператор — сокращённая запись if-else в одну строку
         String status = (age2 >= 18) ? "Взрослый" : "Ребенок";
@@ -108,7 +108,20 @@ public class ConditionsTasks {
      * Задача 1: Определение времени года по номеру месяца
      */
     public static void taskSeasons() {
-        // Здесь будет код задачи
+        int month = 5;
+        int year = 2026;
+
+        if (month >= 1 && month <= 2 || month == 12) {
+            System.out.println("месяц = " + month + ", зима " + year);
+        } else if (month >= 3 && month <= 5) {
+            System.out.println("месяц = " + month + ", весна " + year);
+        } else if (month >= 6 && month <= 8) {
+            System.out.println("месяц = " + month + ", лето " + year);
+        } else if (month >= 9 && month <= 11) {
+            System.out.println("месяц = " + month + ", осень " + year);
+        } else {
+            System.out.println("Ошибка: нет месяца " + month);
+        }
     }
 
     /**
