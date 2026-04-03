@@ -3,14 +3,14 @@ package loops;
 public class LoopsPractice {
     public static void main(String[] args) {
         // === ПРИМЕРЫ ИЗ УРОКА ===
-        /*   taskWhileExample();
+        /*taskWhileExample();
         taskForExample();
         taskDoWhileExample();
         taskDifferenceExample();
 
         System.out.println("========== МОЯ ПРАКТИКА ==========");
-        findNumber();   */
-        calculateSum();
+        findNumber();
+        calculateSum();*/
     }
     public static void taskWhileExample() {
         System.out.println("=== Цикл while ===");
