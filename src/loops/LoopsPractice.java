@@ -10,8 +10,9 @@ public class LoopsPractice {
 
         System.out.println("========== МОЯ ПРАКТИКА ==========");
         findNumber();
-        calculateSum();*/
-        multiplicationTable();
+        calculateSum();
+        multiplicationTable();*/
+        factorial();
     }
     public static void taskWhileExample() {
         System.out.println("=== Цикл while ===");
@@ -119,6 +120,17 @@ public class LoopsPractice {
             }
             System.out.println();
         }
+    }
+    // Следующая задача: "Факториал числа"   Факториал числа n — это произведение всех чисел от 1 до n
+    public static void factorial() {
+        int n = 5;
+        int result = 1;
+
+        for (int i = 1; i <= n; i++) {
+            result = result * i;
+        }
+
+        System.out.println("Факториал " + n + "! = " + result);
     }
 
 }
