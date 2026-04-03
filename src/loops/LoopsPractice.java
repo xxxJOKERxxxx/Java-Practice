@@ -1,0 +1,39 @@
+package loops;
+
+public class LoopsPractice {
+    public static void main(String[] args) {
+        taskWhileExample();
+        taskForExample();
+    }
+    public static void taskWhileExample() {
+        System.out.println("=== Цикл while ===");
+
+        int counter = 1;  // Создаём переменную-счётчик. Начинаем с 1.
+
+        while (counter <= 5) {  //Проверяем условие: пока counter меньше или равен 5
+            System.out.println("counter = " + counter);
+            //    - Если ДА → заходим внутрь
+            //    - Если НЕТ → пропускаем и идём дальше
+             counter = counter + 1;  //  Увеличиваем счётчик на 1 (чтобы когда-то остановиться)
+            //    Без этого шага цикл будет бесконечным!
+            // Возвращаемся к строке 2 (проверяем условие с новым значением counter)
+        }
+        // 6. Когда условие стало false (counter = 6), выходим из цикла и идём сюда
+        System.out.println("Цикл закончился, counter стал = " + counter); // 3. Печатаем текущее значение
+    }
+    public static void taskForExample() {
+        System.out.println("=== Цикл for ===");
+
+        // for (начало; условие_продолжения; шаг)
+        // начало:       int i = 1          → создаём счётчик i, начинаем с 1
+        // условие:      i <= 5            → пока i меньше или равно 5, работаем
+        // шаг:          i = i + 1         → каждый раз увеличиваем i на 1
+
+        for (int i = 1; i <= 5; i = i + 1) {
+            System.out.println("Привет! Это повтор номер " + i);
+        }
+
+        System.out.println("Цикл закончился, i больше не существует (жил только внутри цикла)");
+    }
+
+}
