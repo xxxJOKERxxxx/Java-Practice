@@ -2,8 +2,10 @@ package loops;
 
 public class LoopsPractice {
     public static void main(String[] args) {
-        taskWhileExample();
-        taskForExample();
+        //taskWhileExample();
+       // taskForExample();
+        taskDoWhileExample();
+        taskDifferenceExample();
     }
     public static void taskWhileExample() {
         System.out.println("=== Цикл while ===");
@@ -34,6 +36,39 @@ public class LoopsPractice {
         }
 
         System.out.println("Цикл закончился, i больше не существует (жил только внутри цикла)");
+    }
+
+    public static void taskDoWhileExample() {
+        System.out.println("\n=== Цикл do-while ===");
+
+        int counter = 1;
+
+        // do — "сделай"
+        do {
+            System.out.println("counter = " + counter);
+            counter = counter + 1;
+        } while (counter <= 5);  // while — "пока" (проверка ПОСЛЕ выполнения)
+
+        System.out.println("Цикл закончился, counter стал = " + counter);
+    }
+
+    public static void taskDifferenceExample() {
+        System.out.println("\n=== Разница между while и do-while ===");
+
+        int i = 10;  // условие сразу ложно (10 > 5)
+
+        System.out.println("--- while ---");
+        while (i <= 5) {
+            System.out.println("while: i = " + i);  // НЕ выполнится ни разу
+        }
+        System.out.println("while: не выполнился ни разу");
+
+        System.out.println("\n--- do-while ---");
+        i = 10;  // сбрасываем счётчик
+        do {
+            System.out.println("do-while: i = " + i);  // выполнится ОДИН раз
+        } while (i <= 5);
+        System.out.println("do-while: выполнился один раз, потом проверил условие и вышел");
     }
 
 }
