@@ -11,8 +11,9 @@ public class LoopsPractice {
         System.out.println("========== МОЯ ПРАКТИКА ==========");
         findNumber();
         calculateSum();
-        multiplicationTable();*/
-        factorial();
+        multiplicationTable();
+        factorial();*/
+        countEvenNumbers();
     }
     public static void taskWhileExample() {
         System.out.println("=== Цикл while ===");
@@ -130,6 +131,19 @@ public class LoopsPractice {
             result = result * i;
         }
         System.out.println("Факториал " + n + "! = " + result);
+    }
+
+    // Задача: "Посчитать количество чётных чисел"
+
+    public static void countEvenNumbers() {
+        int[] numbers = {2, 5, 8, 3, 10, 7};
+        int count = 0;
+        for (int i =0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                count++;
+            }
+        }
+        System.out.println("колличество чётных чисел: " + count);
     }
 
 }
