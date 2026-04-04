@@ -22,8 +22,8 @@ public class LoopsPractice {
         //findMax();
         //reverseArray();
         //reverseArray2();
-        findMinIndex();
-
+        //findMinIndex();
+        numberOccurs();
     }
 
     public static void taskWhileExample() {
@@ -229,4 +229,17 @@ public class LoopsPractice {
         System.out.println("Индекс минимального числа: " + min);
         System.out.println("Минимальное число: " + numbers[min]);
     }
+    //Задача: "Подсчитать, сколько раз встречается число"
+
+    public static void numberOccurs() {
+        int[] numbers = {3, 5, 3, 8, 3, 5, 9};
+        int count =0;
+        for (int i = 0; i < numbers.length; i++) {
+            if ( numbers[i] == 3) {
+                count++;
+            }
+        }
+        System.out.println("Число 3 встречаетс: " + count +  " раза ");
+    }
+
 }
