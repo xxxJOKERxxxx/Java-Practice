@@ -23,7 +23,8 @@ public class LoopsPractice {
         //reverseArray();
         //reverseArray2();
         //findMinIndex();
-        numberOccurs();
+        //numberOccurs();
+        numberSearch();
     }
 
     public static void taskWhileExample() {
@@ -233,13 +234,32 @@ public class LoopsPractice {
 
     public static void numberOccurs() {
         int[] numbers = {3, 5, 3, 8, 3, 5, 9};
-        int count =0;
+        int count = 0;
         for (int i = 0; i < numbers.length; i++) {
-            if ( numbers[i] == 3) {
+            if (numbers[i] == 3) {
                 count++;
             }
         }
-        System.out.println("Число 3 встречаетс: " + count +  " раза ");
+        System.out.println("Число 3 встречаетс: " + count + " раза ");
+    }
+
+    public static void numberSearch() {
+        int[] numbers = {3, 5, 3, 8, 3, 5, 9};
+        int target = 3;
+        int count = 0;
+        boolean found = false;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == target) {
+                count++;
+            }
+
+        }
+        if (count>0) {
+            System.out.println(" Да, число: " + target + " есть " + count + " раза!!!");
+        }else {
+            System.out.println("Нет, числа " + target + " нет");
+        }
+
     }
 
 }
