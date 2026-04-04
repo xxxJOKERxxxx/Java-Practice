@@ -2,20 +2,22 @@ package loops;
 
 public class LoopsPractice {
     public static void main(String[] args) {
+
         // === ПРИМЕРЫ ИЗ УРОКА ===
-//        taskWhileExample();
-//        taskForExample();
-//        taskDoWhileExample();
-//        taskDifferenceExample();
-//
-//        System.out.println("========== МОЯ ПРАКТИКА ==========");
-//        findNumber();
-//        calculateSum();
-//        multiplicationTable();
-//        factorial();
-//        countEvenNumbers();
-        //sumOfArray();
-        sumOfEvenNumbers();
+
+        //taskWhileExample();
+        //taskForExample();
+        //taskDoWhileExample();
+        //taskDifferenceExample();
+        //System.out.println("========== МОЯ ПРАКТИКА ==========");
+        //findNumber();
+        //calculateSum();
+        //multiplicationTable();
+        //factorial();
+        // countEvenNumbers();
+        // sumOfArray();
+        //sumOfEvenNumbers();
+        findMax();
     }
 
     public static void taskWhileExample() {
@@ -170,11 +172,19 @@ public class LoopsPractice {
             if (numbers[i] % 2 == 0) {
                 sum = sum + numbers[i];
             }
-
-
         }
         System.out.println("Сумма чётных чисел: " + sum + "(потому что 6 + 12 = 18) ");
+    }
 
+    public static void findMax() {
+        int[] numbers = {4, 7, 2, 9, 11, 5};
+        int max = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        System.out.println(" максимальное число: " + max);
 
     }
 
