@@ -226,6 +226,7 @@ public class LoopsPractice {
                 min = i;
             }
         }
-        System.out.println(" индекс минимального числа: " + min);
+        System.out.println("Индекс минимального числа: " + min);
+        System.out.println("Минимальное число: " + numbers[min]);
     }
 }
