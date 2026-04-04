@@ -21,7 +21,8 @@ public class LoopsPractice {
         //sumOfEvenNumbers();
         //findMax();
         //reverseArray();
-        reverseArray2();
+        //reverseArray2();
+        findMinIndex();
 
     }
 
@@ -192,12 +193,13 @@ public class LoopsPractice {
         }
         System.out.println(" максимальное число: " + max);
     }
+
     public static void reverseArray() {
 
         int[] numbers = {10, 20, 30, 40, 50};
         int[] reversedArray = new int[numbers.length];
         for (int i = 0; i < numbers.length; i++) {
-            reversedArray[i] = numbers[numbers.length -1 -i];
+            reversedArray[i] = numbers[numbers.length - 1 - i];
         }
         for (int i = 0; i < reversedArray.length; i++) {
             System.out.println(reversedArray[i]);
@@ -205,14 +207,25 @@ public class LoopsPractice {
     }
 
     public static void reverseArray2() {
-        int[] numbers = {11,22,33,44,55};
+        int[] numbers = {11, 22, 33, 44, 55};
         int[] expandArray = new int[numbers.length];
         int j = 0;//Имя переменной. Будет указывать, в какую ячейку expandArray класть значение
-        for (int i = numbers.length -1; i >=0; i--) {//i = numbers.length - 1 Начинаем с последнего индекса. Длина 5, индексы 0,1,2,3,4 → последний индекс 4, i >= 0	Пока i не станет меньше 0 (т.е. пока не прошли все элементы), i--	После каждого шага уменьшаем i на 1 (двигаемся к началу)
-            expandArray[j]=numbers[i];// expandArray[j]	Обращаемся к j-й ячейке нового массива, =	Присваиваем, numbers[i]	Берём значение из исходного массива по индексу i
+        for (int i = numbers.length - 1; i >= 0; i--) {//i = numbers.length - 1 Начинаем с последнего индекса. Длина 5, индексы 0,1,2,3,4 → последний индекс 4, i >= 0	Пока i не станет меньше 0 (т.е. пока не прошли все элементы), i--	После каждого шага уменьшаем i на 1 (двигаемся к началу)
+            expandArray[j] = numbers[i];// expandArray[j]	Обращаемся к j-й ячейке нового массива, =	Присваиваем, numbers[i]	Берём значение из исходного массива по индексу i
             j++;//Увеличиваем j на 1 (то же самое что j = j + 1), Зачем: После того как положили значение в expandArray[0], нужно перейти к следующей ячейке — expandArray[1], Без j++: Все значения кладутся в expandArray[0], последнее записанное перезатирает предыдущие.
         }
         System.out.println("обратный масив циклом равен: " + Arrays.toString(expandArray));// Arrays	Класс с полезными методами для работы с массивами, toString()	Метод, который превращает массив в читаемую строку, Зачем: Без этого System.out.println(expandArray) напечатает странный адрес в памяти, а не элементы.
 
+    }
+
+    public static void findMinIndex() {
+        int[] numbers = {5, 67, 8, 13, 9, 2, 33};
+        int min = 0;
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] < numbers[min]) {
+                min = i;
+            }
+        }
+        System.out.println(" индекс минимального числа: " + min);
     }
 }
