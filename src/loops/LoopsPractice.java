@@ -17,7 +17,8 @@ public class LoopsPractice {
         // countEvenNumbers();
         // sumOfArray();
         //sumOfEvenNumbers();
-        findMax();
+        //findMax();
+        reverseArray();
     }
 
     public static void taskWhileExample() {
@@ -178,14 +179,26 @@ public class LoopsPractice {
 
     public static void findMax() {
         int[] numbers = {4, 7, 2, 9, 11, 5};
-        int max = numbers[0];
+        int max = numbers[0];//(первый элемент)
         for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] > max) {
-                max = numbers[i];
+            if (numbers[i] > max) {// В цикле сравнивай каждый элемент с max
+                max = numbers[i];// Если элемент больше max — обновляй max
+
             }
         }
         System.out.println(" максимальное число: " + max);
 
     }
 
+    public static void reverseArray() {
+
+        int[] numbers = {10, 20, 30, 40, 50};
+        int[] reversedArray = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            reversedArray[i] = numbers[numbers.length -1 -i];
+        }
+        for (int i = 0; i < reversedArray.length; i++) {
+            System.out.println(reversedArray[i]);
+        }
+    }
 }
