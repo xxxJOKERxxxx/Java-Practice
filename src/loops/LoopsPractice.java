@@ -3,18 +3,21 @@ package loops;
 public class LoopsPractice {
     public static void main(String[] args) {
         // === ПРИМЕРЫ ИЗ УРОКА ===
-        /*taskWhileExample();
-        taskForExample();
-        taskDoWhileExample();
-        taskDifferenceExample();
-
-        System.out.println("========== МОЯ ПРАКТИКА ==========");
-        findNumber();
-        calculateSum();
-        multiplicationTable();
-        factorial();*/
-        countEvenNumbers();
+//        taskWhileExample();
+//        taskForExample();
+//        taskDoWhileExample();
+//        taskDifferenceExample();
+//
+//        System.out.println("========== МОЯ ПРАКТИКА ==========");
+//        findNumber();
+//        calculateSum();
+//        multiplicationTable();
+//        factorial();
+//        countEvenNumbers();
+        //sumOfArray();
+        sumOfEvenNumbers();
     }
+
     public static void taskWhileExample() {
         System.out.println("=== Цикл while ===");
 
@@ -24,13 +27,14 @@ public class LoopsPractice {
             System.out.println("counter = " + counter);
             //    - Если ДА → заходим внутрь
             //    - Если НЕТ → пропускаем и идём дальше
-             counter = counter + 1;  //  Увеличиваем счётчик на 1 (чтобы когда-то остановиться)
+            counter = counter + 1;  //  Увеличиваем счётчик на 1 (чтобы когда-то остановиться)
             //    Без этого шага цикл будет бесконечным!
             // Возвращаемся к строке 2 (проверяем условие с новым значением counter)
         }
         // 6. Когда условие стало false (counter = 6), выходим из цикла и идём сюда
         System.out.println("Цикл закончился, counter стал = " + counter); // 3. Печатаем текущее значение
     }
+
     public static void taskForExample() {
         System.out.println("=== Цикл for ===");
 
@@ -105,7 +109,7 @@ public class LoopsPractice {
         int sum = 0; // сюда будем добавлять
         int n = 5; //  до какого числа складываем
         for (int i = 1; i <= n; i++) { // На каждой итерации прибавлять текущее число к sum
-            sum= sum + i;
+            sum = sum + i;
         }
 
         System.out.println("Сумма чисел от 1 до " + n + " = " + sum);
@@ -114,14 +118,15 @@ public class LoopsPractice {
     // Следующая задача — "Таблица умножения" Вывести таблицу умножения от 1 до 5
     public static void multiplicationTable() {
 
-        for (int i= 1; i <=5; i++){
-            for(int j = 1; j <=5; j++){
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= 5; j++) {
                 int result = i * j;
                 System.out.println(i + " x " + j + " = " + result);
             }
             System.out.println();
         }
     }
+
     // Следующая задача: "Факториал числа"   Факториал числа n — это произведение всех чисел от 1 до n
     public static void factorial() {
         int n = 5;
@@ -138,12 +143,39 @@ public class LoopsPractice {
     public static void countEvenNumbers() {
         int[] numbers = {2, 5, 8, 3, 10, 7};
         int count = 0;
-        for (int i =0; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0) {
                 count++;
             }
         }
         System.out.println("колличество чётных чисел: " + count);
+    }
+
+    // Задача: "Найти сумму всех чисел в массиве"
+    public static void sumOfArray() {
+        int[] numbers = {2, 5, 8, 3, 10, 7};
+        int sum = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            sum = sum + numbers[i];
+        }
+
+        System.out.println("Сумма чисел: " + sum);
+    }
+
+    public static void sumOfEvenNumbers() {
+        int[] numbers = {3, 6, 9, 12, 15};
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                sum = sum + numbers[i];
+            }
+
+
+        }
+        System.out.println("Сумма чётных чисел: " + sum + "(потому что 6 + 12 = 18) ");
+
+
     }
 
 }
