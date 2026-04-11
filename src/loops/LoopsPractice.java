@@ -27,7 +27,8 @@ public class LoopsPractice {
         //numberSearch();
         //shiftLeft();
         //findFirstNegative();
-        findLastNegative();
+        //findLastNegative();
+        findSecondMaximumNumber(); // второе максимальное число
     }
 
     public static void taskWhileExample() {
@@ -291,7 +292,7 @@ public class LoopsPractice {
     }
 
     public static void findLastNegative() {
-        int[] numbers = {5, -3, 8, -1, 6, -4};
+        int[] numbers = {5, -3, 8, 1, 6, 4};
         int index = -1;
         for (int i = numbers.length - 1; i >= 0; i--) {
             if (numbers[i] < 0) {
@@ -302,6 +303,26 @@ public class LoopsPractice {
             System.out.println("Индекс последнего отрицательного числа: " + index + "(" + numbers[index] + ")");
         }else {
             System.out.println(" отрицательных чисел нет");
+        }
+
+    }
+
+    public static void findSecondMaximumNumber() {
+        int[] numbers = {7, 2, 9, 5, 9, 3};
+        int max = numbers[0];
+        int secondMax = numbers[0];
+        for (int i= 1; i <numbers.length; i++) {
+            if (numbers[i] > max) {
+                secondMax = max;
+                max = numbers[i];
+            }else if (numbers[i]> secondMax && numbers[i] != max) {
+                secondMax = numbers[i];
+            }
+        }
+        if (secondMax == max) {
+            System.out.println("нет второго максимального числа");
+        }else {
+            System.out.println("Второе максимальное число: " + secondMax);
         }
 
     }
