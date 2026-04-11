@@ -6,6 +6,7 @@ import java.util.Scanner;
  * Практика по теме: Условные операторы
  * Содержит несколько независимых задач в разных методах
  * if, else, switch, ternary
+ *
  * @author xxxJOKERxxxx
  */
 public class ConditionsTasks {
@@ -21,11 +22,12 @@ public class ConditionsTasks {
 
         // taskIfExample();      // Примеры if, if-else, if-else-if, switch, ternary
 
-         //taskSeasons();     // Задача: времена года
+        //taskSeasons();     // Задача: времена года
 
-         //taskEvenOdd();     // Задача: чётное/нечётное
+        //taskEvenOdd();     // Задача: чётное/нечётное
         //checkTemperature();  // введите температуру
-        getDiscount(); // определить скидку
+        //getDiscount(); // определить скидку
+        getDayType();
 
     }
 
@@ -110,7 +112,6 @@ public class ConditionsTasks {
         System.out.println("==================== ЗАДАЧИ ДЛЯ ПРАКТИКИ ====================");
     }
 
-
     /**
      * Задача 1: Определение времени года по номеру месяца
      */
@@ -159,28 +160,44 @@ public class ConditionsTasks {
         int temp = sc.nextInt();
         if (temp < 0) {
             System.out.println("температура " + temp + ": Мороз!");
-        }else if (temp >= 0 && temp <= 15) {
-            System.out.println("температура " + temp +": Прохладно!");
-        }else if (temp >= 15 && temp <= 25) {
+        } else if (temp >= 0 && temp <= 15) {
+            System.out.println("температура " + temp + ": Прохладно!");
+        } else if (temp >= 15 && temp <= 25) {
             System.out.println("температура " + temp + ": Тепло!");
-        }else if (temp >= 25 && temp <= 35) {
+        } else if (temp >= 25 && temp <= 35) {
             System.out.println("температура " + temp + ": Жара!");
-        }else System.out.println("температура " + temp + ": спасайся кто может!!!");
+        } else System.out.println("температура " + temp + ": спасайся кто может!!!");
         sc.close();
     }
 
-    public static void getDiscount () {
+    public static void getDiscount() {
         System.out.println(" Введите возраст: ");
         Scanner sc = new Scanner(System.in);
         int age = sc.nextInt();
-        if (age < 18 ) {
+        if (age < 18) {
             System.out.println(" скидка: 0%");
-        }else if (age >= 18 && age <= 60) {
+        } else if (age >= 18 && age <= 60) {
             System.out.println(" скидка: 5%");
-        }else if (age >= 60) {
+        } else if (age >= 60) {
             System.out.println(" скидка: 10%");
 
         }
     }
 
+    public static void getDayType() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" введите день недели от 1 до 7 : ");
+        int dayNumber = sc.nextInt();
+        switch (dayNumber) {
+            case 1: case 2: case 3: case 4: case 5: System.out.println("Будний день!");
+            break;
+            case 6: case 7:
+                System.out.println("Выходной день!");
+                break;
+                default:
+                    System.out.println("Неверный день недели!");
+        }
+        sc.close();
     }
+
+}
