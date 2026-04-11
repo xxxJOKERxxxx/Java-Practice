@@ -26,7 +26,8 @@ public class LoopsPractice {
         //numberOccurs();
         //numberSearch();
         //shiftLeft();
-        findFirstNegative();
+        //findFirstNegative();
+        findLastNegative();
     }
 
     public static void taskWhileExample() {
@@ -279,13 +280,30 @@ public class LoopsPractice {
         int index = -1; // не нашли
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] < 0) {
-                index =i;
+                index = i;
                 break;
             }
         }
         if (index != -1) {
             System.out.println("Индекс первого отрицательного числа: " + index);
-        }else System.out.println("Отрицательных чисел нет");
+        } else System.out.println("Отрицательных чисел нет");
 
     }
+
+    public static void findLastNegative() {
+        int[] numbers = {5, -3, 8, -1, 6, -4};
+        int index = -1;
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            if (numbers[i] < 0) {
+                index = i;
+                break;
+            }
+        }if (index != -1){
+            System.out.println("Индекс последнего отрицательного числа: " + index + "(" + numbers[index] + ")");
+        }else {
+            System.out.println(" отрицательных чисел нет");
+        }
+
+    }
+
 }
