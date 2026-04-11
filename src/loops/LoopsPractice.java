@@ -331,20 +331,47 @@ public class LoopsPractice {
     }
 
     public static void guessNumberWhile() {
+        // Создаём Scanner для чтения ввода с клавиатуры
         Scanner scanner = new Scanner(System.in);
-        int seсret = 7;
-        int guess = 0; //начальное значение, не равное secret
-        System.out.println("угадай число от 1 до 10");
-        while (guess != seсret) {
-            System.out.println(" твой вариант: ");
+
+        // Загаданное число (тип int, значение 7)
+        int secret = 7;
+
+        // Переменная для хранения числа, которое введёт пользователь
+        // Начинаем с 0, потому что 0 точно не равно 7 (чтобы цикл начался)
+        int guess = 0;
+
+        // Приветствие
+        System.out.println("Угадай число от 1 до 10");
+
+        // while — цикл с предусловием
+        // Сначала проверяем условие, потом выполняем тело
+        // Цикл работает, пока guess НЕ равно secret
+        while (guess != secret) {
+
+            // Просим пользователя ввести число
+            System.out.print("Твой вариант: ");
+
+            // Читаем число, которое ввёл пользователь, и сохраняем в guess
             guess = scanner.nextInt();
-            if (guess < seсret) {
-                System.out.println("мало, пробуй еще!");
-            } else if (guess > seсret) {
-                System.out.println("много, пробуй ещё!");
+
+            // Если введённое число меньше загаданного
+            if (guess < secret) {
+                System.out.println("Мало, пробуй ещё!");
             }
+            // Если введённое число больше загаданного
+            else if (guess > secret) {
+                System.out.println("Много, пробуй ещё!");
+            }
+            // Если равно — условие while (guess != secret) станет false,
+            // и цикл закончится, не заходя на следующий круг
         }
-        System.out.println("угадал! это: " + seсret);
+
+        // Эта строка выполнится ТОЛЬКО после выхода из цикла
+        // То есть когда guess == secret
+        System.out.println("Угадал! Это " + secret);
+
+        // Закрываем Scanner (освобождаем ресурсы)
         scanner.close();
     }
 }
