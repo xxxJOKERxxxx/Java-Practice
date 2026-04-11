@@ -1,6 +1,7 @@
 package loops;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class LoopsPractice {
     public static void main(String[] args) {
@@ -28,7 +29,8 @@ public class LoopsPractice {
         //shiftLeft();
         //findFirstNegative();
         //findLastNegative();
-        findSecondMaximumNumber(); // второе максимальное число
+        //findSecondMaximumNumber(); // второе максимальное число
+        guessNumberWhile(); //угадай число
     }
 
     public static void taskWhileExample() {
@@ -299,9 +301,10 @@ public class LoopsPractice {
                 index = i;
                 break;
             }
-        }if (index != -1){
+        }
+        if (index != -1) {
             System.out.println("Индекс последнего отрицательного числа: " + index + "(" + numbers[index] + ")");
-        }else {
+        } else {
             System.out.println(" отрицательных чисел нет");
         }
 
@@ -311,20 +314,37 @@ public class LoopsPractice {
         int[] numbers = {7, 2, 9, 5, 9, 3};
         int max = numbers[0];
         int secondMax = numbers[0];
-        for (int i= 1; i <numbers.length; i++) {
+        for (int i = 1; i < numbers.length; i++) {
             if (numbers[i] > max) {
                 secondMax = max;
                 max = numbers[i];
-            }else if (numbers[i]> secondMax && numbers[i] != max) {
+            } else if (numbers[i] > secondMax && numbers[i] != max) {
                 secondMax = numbers[i];
             }
         }
         if (secondMax == max) {
             System.out.println("нет второго максимального числа");
-        }else {
+        } else {
             System.out.println("Второе максимальное число: " + secondMax);
         }
 
     }
 
+    public static void guessNumberWhile() {
+        Scanner scanner = new Scanner(System.in);
+        int seсret = 7;
+        int guess = 0; //начальное значение, не равное secret
+        System.out.println("угадай число от 1 до 10");
+        while (guess != seсret) {
+            System.out.println(" твой вариант: ");
+            guess = scanner.nextInt();
+            if (guess < seсret) {
+                System.out.println("мало, пробуй еще!");
+            } else if (guess > seсret) {
+                System.out.println("много, пробуй ещё!");
+            }
+        }
+        System.out.println("угадал! это: " + seсret);
+        scanner.close();
+    }
 }
