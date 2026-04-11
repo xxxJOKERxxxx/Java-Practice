@@ -25,7 +25,8 @@ public class LoopsPractice {
         //findMinIndex();
         //numberOccurs();
         //numberSearch();
-        shiftLeft();
+        //shiftLeft();
+        findFirstNegative();
     }
 
     public static void taskWhileExample() {
@@ -273,4 +274,18 @@ public class LoopsPractice {
         System.out.println(Arrays.toString(shiftedArray));
     }
 
+    public static void findFirstNegative() {
+        int[] numbers = {5, -3, 8, -1, 6, -4};
+        int index = -1; // не нашли
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < 0) {
+                index =i;
+                break;
+            }
+        }
+        if (index != -1) {
+            System.out.println("Индекс первого отрицательного числа: " + index);
+        }else System.out.println("Отрицательных чисел нет");
+
+    }
 }
