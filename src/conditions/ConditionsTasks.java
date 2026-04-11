@@ -24,7 +24,9 @@ public class ConditionsTasks {
          //taskSeasons();     // Задача: времена года
 
          //taskEvenOdd();     // Задача: чётное/нечётное
-        checkTemperature();
+        //checkTemperature();  // введите температуру
+        getDiscount(); // определить скидку
+
     }
 
     // ==================== ПРИМЕРЫ РАЗНЫХ КОНСТРУКЦИЙ ====================
@@ -165,6 +167,20 @@ public class ConditionsTasks {
             System.out.println("температура " + temp + ": Жара!");
         }else System.out.println("температура " + temp + ": спасайся кто может!!!");
         sc.close();
+    }
+
+    public static void getDiscount () {
+        System.out.println(" Введите возраст: ");
+        Scanner sc = new Scanner(System.in);
+        int age = sc.nextInt();
+        if (age < 18 ) {
+            System.out.println(" скидка: 0%");
+        }else if (age >= 18 && age <= 60) {
+            System.out.println(" скидка: 5%");
+        }else if (age >= 60) {
+            System.out.println(" скидка: 10%");
+
+        }
     }
 
     }
