@@ -1,5 +1,7 @@
 package conditions;  // Пакет — как папка для организации кода
 
+import java.util.Scanner;
+
 /**
  * Практика по теме: Условные операторы
  * Содержит несколько независимых задач в разных методах
@@ -17,11 +19,12 @@ public class ConditionsTasks {
 
         //Раскомментируй нужную задачу, закомментируй ненужные
 
-        taskIfExample();      // Примеры if, if-else, if-else-if, switch, ternary
+        // taskIfExample();      // Примеры if, if-else, if-else-if, switch, ternary
 
-         taskSeasons();     // Задача: времена года
+         //taskSeasons();     // Задача: времена года
 
-         taskEvenOdd();     // Задача: чётное/нечётное
+         //taskEvenOdd();     // Задача: чётное/нечётное
+        checkTemperature();
     }
 
     // ==================== ПРИМЕРЫ РАЗНЫХ КОНСТРУКЦИЙ ====================
@@ -135,4 +138,33 @@ public class ConditionsTasks {
         System.out.println("Число " + number + " — " + result);
     }
 
-}
+    public static void checkTemperature() {
+
+   /* Задача 1 (if-else)
+    Условие:
+    Напиши метод checkTemperature(int temp), который:
+
+    Если temp < 0 → выводит "Ледяной холод"
+
+    Если temp >= 0 и temp <= 15 → выводит "Прохладно"
+
+    Если temp > 15 и temp <= 25 → выводит "Тепло"
+
+    Если temp > 25 → выводит "Жара"*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" введите температуру: ");
+        int temp = sc.nextInt();
+        if (temp < 0) {
+            System.out.println("температура " + temp + ": Мороз!");
+        }else if (temp >= 0 && temp <= 15) {
+            System.out.println("температура " + temp +": Прохладно!");
+        }else if (temp >= 15 && temp <= 25) {
+            System.out.println("температура " + temp + ": Тепло!");
+        }else if (temp >= 25 && temp <= 35) {
+            System.out.println("температура " + temp + ": Жара!");
+        }else System.out.println("температура " + temp + ": спасайся кто может!!!");
+        sc.close();
+    }
+
+    }

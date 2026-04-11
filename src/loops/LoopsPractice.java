@@ -24,7 +24,8 @@ public class LoopsPractice {
         //reverseArray2();
         //findMinIndex();
         //numberOccurs();
-        numberSearch();
+        //numberSearch();
+        shiftLeft();
     }
 
     public static void taskWhileExample() {
@@ -254,12 +255,22 @@ public class LoopsPractice {
             }
 
         }
-        if (count>0) {
+        if (count > 0) {
             System.out.println(" Да, число: " + target + " есть " + count + " раза!!!");
-        }else {
+        } else {
             System.out.println("Нет, числа " + target + " нет");
         }
 
+    }
+
+    public static void shiftLeft() {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int[] shiftedArray = new int[numbers.length];
+        for (int i = 0; i < numbers.length - 1; i++) {
+            shiftedArray[i] = numbers[i + 1];  // копируем со сдвигом
+            shiftedArray[numbers.length - 1] = 0; // // последнему 0
+        }
+        System.out.println(Arrays.toString(shiftedArray));
     }
 
 }
