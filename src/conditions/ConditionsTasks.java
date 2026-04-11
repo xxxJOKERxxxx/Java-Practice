@@ -27,7 +27,8 @@ public class ConditionsTasks {
         //taskEvenOdd();     // Задача: чётное/нечётное
         //checkTemperature();  // введите температуру
         //getDiscount(); // определить скидку
-        getDayType();
+        //getDayType();//определить день
+        getMonthSeason();
 
     }
 
@@ -198,6 +199,29 @@ public class ConditionsTasks {
                     System.out.println("Неверный день недели!");
         }
         sc.close();
+    }
+
+    public static void getMonthSeason() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" введите число месяца: ");
+        int month = sc.nextInt();
+        switch (month) {
+            case 1: case 2: case 12:
+                System.out.println("Зима");
+            break;
+            case 3: case 4: case 5:
+                System.out.println("Весна");
+                break;
+                case 6: case 7: case 8:
+                System.out.println("Лето");
+                break;
+                case 9: case 10: case 11:
+                System.out.println("Осень");
+                break;
+            default:
+                System.out.println("неправильное число (1-12)!!!");
+        }
+
     }
 
 }
