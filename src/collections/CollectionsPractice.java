@@ -26,11 +26,14 @@ public class CollectionsPractice {
 
     public static void sumOfNumbers() {
         ArrayList<Integer> numbers = new ArrayList<>();
-
-        ArrayList<String> list = new ArrayList<>();
-        list.add("A");
-        list.add("B");
-        System.out.println(list.size());
+        numbers.add(5);
+        numbers.add(10);
+        numbers.add(15);
+        int sum = 0;
+        for(int i = 0; i < numbers.size(); i++) {
+            sum += numbers.get(i);
+        }
+        System.out.println("sum = " + sum);
     }
 
 }
