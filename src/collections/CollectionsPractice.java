@@ -12,7 +12,8 @@ public class CollectionsPractice {
         // friendsList();
         //sumOfNumbers();
         //printBooks();
-        removeColors();
+        // removeColors();
+        replacePet();
 
     }
     public static void friendsList() {
@@ -63,4 +64,15 @@ public class CollectionsPractice {
         System.out.println(colors);
     }
 
+    public static void replacePet() {
+        ArrayList<String> pets = new ArrayList<>();
+        pets.add("кошка");
+        pets.add("собака");
+        pets.add("хомяк");
+        pets.add("попугай");
+
+        System.out.println(pets);
+        pets.set(2,"пума");
+        System.out.println(pets);
+    }
 }
