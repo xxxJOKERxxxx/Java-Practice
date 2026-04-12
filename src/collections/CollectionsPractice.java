@@ -1,5 +1,6 @@
 package collections;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 
 public class CollectionsPractice {
@@ -9,7 +10,8 @@ public class CollectionsPractice {
 
         // здесь будем вызывать методы
         // friendsList();
-        sumOfNumbers();
+        //sumOfNumbers();
+        printBooks();
 
     }
     public static void friendsList() {
@@ -34,6 +36,19 @@ public class CollectionsPractice {
             sum += numbers.get(i);
         }
         System.out.println("sum = " + sum);
+    }
+
+    public static void printBooks() {
+        ArrayList<String> books = new ArrayList<>();
+
+        books.add("Властелин колец");
+        books.add("Мастер и Маргарита");
+        books.add("Война и мир");
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println(books.get(i));
+
+        }
+
     }
 
 }
