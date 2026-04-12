@@ -11,7 +11,8 @@ public class CollectionsPractice {
         // здесь будем вызывать методы
         // friendsList();
         //sumOfNumbers();
-        printBooks();
+        //printBooks();
+        removeColors();
 
     }
     public static void friendsList() {
@@ -49,6 +50,17 @@ public class CollectionsPractice {
 
         }
 
+    }
+
+    public static void removeColors() {
+        ArrayList<String> colors = new ArrayList<>();
+        colors.add("red");
+        colors.add("blue");
+        colors.add("green");
+        colors.add("yellow");
+        System.out.println(colors);
+        colors.remove("blue");
+        System.out.println(colors);
     }
 
 }
