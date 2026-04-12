@@ -13,7 +13,8 @@ public class CollectionsPractice {
         //sumOfNumbers();
         //printBooks();
         // removeColors();
-        replacePet();
+        //replacePet();
+        checkNumber();
 
     }
     public static void friendsList() {
@@ -74,5 +75,34 @@ public class CollectionsPractice {
         System.out.println(pets);
         pets.set(2,"пума");
         System.out.println(pets);
+    }
+
+    public static void checkNumber() {
+        ArrayList<String> numbers = new ArrayList<>();
+        numbers.add("10");
+        numbers.add("20");
+        numbers.add("30");
+        numbers.add("40");
+        numbers.add("50");
+
+        // Проверяем наличие 30
+        boolean check30 = false;
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i).equals("30")) {
+                check30 = true;
+                break;
+            }
+        }
+        System.out.println("30 есть в списке: " + check30);
+
+        // Проверяем наличие 100
+        boolean check100 = false;
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i).equals("100")) {
+                check100 = true;
+                break;
+            }
+        }
+        System.out.println("100 есть в списке: " + check100);
     }
 }
