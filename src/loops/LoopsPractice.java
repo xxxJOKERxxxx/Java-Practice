@@ -1,6 +1,7 @@
 package loops;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class LoopsPractice {
@@ -32,7 +33,8 @@ public class LoopsPractice {
         //findSecondMaximumNumber(); // второе максимальное число
         // guessNumberWhile(); //угадай число
         //inputValidNumber(); //do-while — "Хотя бы раз ввести"
-        determiningTimeDay(); // определение времени суток
+        //determiningTimeDay(); // определение времени суток
+        guessNumberLimited();
     }
 
     public static void taskWhileExample() {
@@ -433,6 +435,38 @@ public class LoopsPractice {
             System.out.println("Это вечер");
         }
 
+        scanner.close();
+    }
+
+    public static void guessNumberLimited() {
+        // 1. Создаём Random и Scanner
+        Random rand = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        // 2. Загадываем число ОДИН раз (от 1 до 20)
+        int secret = rand.nextInt(20) + 1;
+
+        // 3. Счётчик попыток
+        int attempts = 0;
+
+        // 4. Цикл на 5 попыток
+        while (attempts < 5) {
+            System.out.print("Введите число от 1 до 20: ");
+            int userGuess = scanner.nextInt();
+            attempts++;  // увеличиваем счётчик
+
+            if (userGuess == secret) {
+                System.out.println("Угадал! За " + attempts + " попыток");
+                return;  // выходим из метода (или break, если только из цикла)
+            } else if (userGuess < secret) {
+                System.out.println("Загаданное число БОЛЬШЕ");
+            } else {
+                System.out.println("Загаданное число МЕНЬШЕ");
+            }
+        }
+
+        // 5. Если вышли из цикла (попытки кончились)
+        System.out.println("Проигрыш! Было загадано: " + secret);
         scanner.close();
     }
 }

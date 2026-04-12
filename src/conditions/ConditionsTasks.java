@@ -28,7 +28,8 @@ public class ConditionsTasks {
         //checkTemperature();  // введите температуру
         //getDiscount(); // определить скидку
         //getDayType();//определить день
-        getMonthSeason();
+        //getMonthSeason();
+
 
     }
 
