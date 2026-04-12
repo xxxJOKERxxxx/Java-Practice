@@ -14,7 +14,8 @@ public class CollectionsPractice {
         //printBooks();
         // removeColors();
         //replacePet();
-        checkNumber();
+        //checkNumber();
+        clear();
 
     }
     public static void friendsList() {
@@ -104,5 +105,17 @@ public class CollectionsPractice {
             }
         }
         System.out.println("100 есть в списке: " + check100);
+    }
+
+    public static void clear() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("один");
+        list.add("два");
+        list.add("три");
+        System.out.println(list);
+        list.clear();
+        System.out.println(list);
+        System.out.println(list.size());
+
     }
 }
