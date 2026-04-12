@@ -34,7 +34,8 @@ public class LoopsPractice {
         // guessNumberWhile(); //угадай число
         //inputValidNumber(); //do-while — "Хотя бы раз ввести"
         //determiningTimeDay(); // определение времени суток
-        guessNumberLimited();
+        //guessNumberLimited();
+        sumFrom1ToN();
     }
 
     public static void taskWhileExample() {
@@ -467,6 +468,20 @@ public class LoopsPractice {
 
         // 5. Если вышли из цикла (попытки кончились)
         System.out.println("Проигрыш! Было загадано: " + secret);
+        scanner.close();
+    }
+
+    public static void sumFrom1ToN() {
+        Scanner scanner = new Scanner(System.in);
+        int number;
+        System.out.println("введите число: ");
+        number = scanner.nextInt();
+        int sum = 0;
+        for (int i = 1; i <= number; i++) {
+            sum = sum + i;
+
+        }
+        System.out.println("Сумма от 1 до " + number + " = " + sum);
         scanner.close();
     }
 }
