@@ -30,7 +30,9 @@ public class LoopsPractice {
         //findFirstNegative();
         //findLastNegative();
         //findSecondMaximumNumber(); // второе максимальное число
-        guessNumberWhile(); //угадай число
+        // guessNumberWhile(); //угадай число
+        //inputValidNumber(); //do-while — "Хотя бы раз ввести"
+        determiningTimeDay(); // определение времени суток
     }
 
     public static void taskWhileExample() {
@@ -372,6 +374,65 @@ public class LoopsPractice {
         System.out.println("Угадал! Это " + secret);
 
         // Закрываем Scanner (освобождаем ресурсы)
+        scanner.close();
+    }
+
+    public static void inputValidNumber() { // метод: хотя бы раз ввести число
+        // Создаём Scanner для чтения ввода с клавиатуры
+        Scanner scanner = new Scanner(System.in);
+
+        int number; // переменная для хранения числа, тип int
+
+        // do-while — цикл с постусловием
+        // Сначала выполняет тело, потом проверяет условие
+        do {
+            // Выводим приглашение на экран
+            System.out.print("Введи число от 1 до 10: ");
+
+            // Читаем число, которое ввёл пользователь
+            number = scanner.nextInt();
+
+            // Если число вне диапазона 1-10
+            if (number < 1 || number > 10) {
+                // Выводим сообщение об ошибке
+                System.out.println("Ошибка! Пробуй ещё.");
+            }
+
+        } while (number < 1 || number > 10); // Условие: пока число НЕ в диапазоне — повторяем
+
+        // Эта строка выполнится, только когда число в диапазоне 1-10
+        System.out.println("Принято! Твоё число: " + number);
+
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+    public static void determiningTimeDay() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите час (0-23): ");
+        int hour = scanner.nextInt();
+
+        // Сначала проверяем, корректный ли час
+        if (hour < 0 || hour > 23) {
+            System.out.println("Введённый час неверный");
+        }
+        // Ночь: с 22 до 23 и с 0 до 5
+        else if (hour >= 22 || hour <= 5) {
+            System.out.println("Это ночь");
+        }
+        // Утро: с 6 до 11
+        else if (hour >= 6 && hour <= 11) {
+            System.out.println("Это утро");
+        }
+        // День: с 12 до 17
+        else if (hour >= 12 && hour <= 17) {
+            System.out.println("Это день");
+        }
+        // Вечер: с 18 до 21
+        else if (hour >= 18 && hour <= 21) {
+            System.out.println("Это вечер");
+        }
+
         scanner.close();
     }
 }
