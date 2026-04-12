@@ -35,7 +35,8 @@ public class LoopsPractice {
         //inputValidNumber(); //do-while — "Хотя бы раз ввести"
         //determiningTimeDay(); // определение времени суток
         //guessNumberLimited();
-        sumFrom1ToN();
+        //sumFrom1ToN();
+        printTable();
     }
 
     public static void taskWhileExample() {
@@ -483,5 +484,19 @@ public class LoopsPractice {
         }
         System.out.println("Сумма от 1 до " + number + " = " + sum);
         scanner.close();
+    }
+
+    public static void printTable(){
+        int[][] table = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        for (int i = 0; i < table.length; i++) {
+            for (int j = 0; j < table[i].length; j++) {
+                System.out.print(table[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
