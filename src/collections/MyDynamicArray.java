@@ -118,7 +118,6 @@ public class MyDynamicArray {
         for (int i = size; i > index; i--) {
             data[i] = data[i - 1];
         }
-
         data[index] = value;
         size++;
     }
