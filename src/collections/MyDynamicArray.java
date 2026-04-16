@@ -79,7 +79,7 @@ public class MyDynamicArray {
     }
 
     public static void main(String[] args) {
-       MyDynamicArray arr = new MyDynamicArray();
+        MyDynamicArray arr = new MyDynamicArray();
 
        /* arr.add(10);
         arr.add(20);
@@ -113,9 +113,12 @@ public class MyDynamicArray {
         arr.add(10);
         arr.add(20);
         arr.add(10);
-        System.out.println(arr.indexOf(10));  // 0
-        System.out.println(arr.indexOf(99));  // -1
-
+        System.out.println(arr.indexOf(10));      // 0
+        System.out.println(arr.lastIndexOf(10));  // 2
+        System.out.println(arr.contains(20));     // true
+        System.out.println(arr.contains(99));     // false
+        arr.set(1, 99);
+        arr.print();
 
     }
 
@@ -147,13 +150,41 @@ public class MyDynamicArray {
         size = 0;
 
     }
+
     public int indexOf(int value) {
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i--) {
             if (data[i] == value) {
                 return i;// как нашли — возвращаем индекс
             }
         }
         return -1;  // не нашли
+    }
+
+    public int lastIndexOf(int value) {
+        for (int i = size - 1; i >= 0; i++) {
+            if (data[i] == value) {
+                return i;
+            }
+
+        }
+        return -1;
+    }
+
+    public boolean contains(int value) {
+
+        for (int i = 0; i < size; i++) {
+            if (data[i] == value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void set(int index, int value) {
+        if (index < 0 || index >= size) {
+            throw new RuntimeException("Индекс вне границ!");
+        }
+        data[index] = value;
     }
 
 }
