@@ -15,7 +15,8 @@ public class CollectionsPractice {
         // removeColors();
         //replacePet();
         //checkNumber();
-        clear();
+        //clear();
+        //clear1();
 
     }
     public static void friendsList() {
@@ -116,6 +117,19 @@ public class CollectionsPractice {
         list.clear();
         System.out.println(list);
         System.out.println(list.size());
+
+    }
+    static void clear1() {
+        int[] numbers = new int[10];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = 0;
+
+        }
+
+    }
+
+    public static void size() {
+        ArrayList<String> list = new ArrayList<>();
 
     }
 }
