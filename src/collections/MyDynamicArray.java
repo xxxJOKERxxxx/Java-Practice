@@ -108,7 +108,7 @@ public class MyDynamicArray {
         System.out.println(arr.size());
 
         arr.add(99);
-        arr.print();*/
+        arr.print();
 
         arr.add(10);
         arr.add(20);
@@ -118,6 +118,11 @@ public class MyDynamicArray {
         System.out.println(arr.contains(20));     // true
         System.out.println(arr.contains(99));     // false
         arr.set(1, 99);
+        arr.print();*/
+        arr.add(10);
+        arr.add(20);
+        int[] newNumbers = {30, 40, 50};
+        arr.addAll(newNumbers);
         arr.print();
 
     }
@@ -152,7 +157,7 @@ public class MyDynamicArray {
     }
 
     public int indexOf(int value) {
-        for (int i = 0; i < size; i--) {
+        for (int i = 0; i < size; i++) {
             if (data[i] == value) {
                 return i;// как нашли — возвращаем индекс
             }
@@ -185,6 +190,12 @@ public class MyDynamicArray {
             throw new RuntimeException("Индекс вне границ!");
         }
         data[index] = value;
+    }
+
+    public void addAll(int[] values) {
+        for (int i = 0; i < values.length; i++) {
+            add(values[i]);
+        }
     }
 
 }
