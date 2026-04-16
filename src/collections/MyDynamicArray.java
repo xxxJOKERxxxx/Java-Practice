@@ -98,17 +98,25 @@ public class MyDynamicArray {
 
         arr.addingElementPosition(1, 99);
         arr.print();  // [10, 99, 20, 30]*/
+        /* arr.add(5);
         arr.add(10);
-        arr.add(20);
-        arr.add(30);
-        arr.print();        // [10, 20, 30]
+
+        arr.print();
 
         arr.clear();
-        arr.print();        // []
-        System.out.println(arr.size());  // 0
+        arr.print();
+        System.out.println(arr.size());
 
         arr.add(99);
-        arr.print();        // [99]
+        arr.print();*/
+
+        arr.add(10);
+        arr.add(20);
+        arr.add(10);
+        System.out.println(arr.indexOf(10));  // 0
+        System.out.println(arr.indexOf(99));  // -1
+
+
     }
 
     public void addingElementPosition(int index, int value) {
@@ -138,6 +146,14 @@ public class MyDynamicArray {
         data = new int[max_size];
         size = 0;
 
+    }
+    public int indexOf(int value) {
+        for (int i = 0; i < size; i++) {
+            if (data[i] == value) {
+                return i;// как нашли — возвращаем индекс
+            }
+        }
+        return -1;  // не нашли
     }
 
 }
