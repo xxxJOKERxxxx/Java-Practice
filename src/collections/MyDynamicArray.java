@@ -91,13 +91,24 @@ public class MyDynamicArray {
 
         System.out.println("Размер: " + arr.size());     // 2
         System.out.println("Пустой? " + arr.isEmpty());  // false   */
-        arr.add(10);
+        /* arr.add(10);
         arr.add(20);
         arr.add(30);
         arr.print();  // [10, 20, 30]
 
         arr.addingElementPosition(1, 99);
-        arr.print();  // [10, 99, 20, 30]
+        arr.print();  // [10, 99, 20, 30]*/
+        arr.add(10);
+        arr.add(20);
+        arr.add(30);
+        arr.print();        // [10, 20, 30]
+
+        arr.clear();
+        arr.print();        // []
+        System.out.println(arr.size());  // 0
+
+        arr.add(99);
+        arr.print();        // [99]
     }
 
     public void addingElementPosition(int index, int value) {
@@ -120,6 +131,13 @@ public class MyDynamicArray {
         }
         data[index] = value;
         size++;
+    }
+
+    public void clear() {
+        max_size = 2;
+        data = new int[max_size];
+        size = 0;
+
     }
 
 }
