@@ -10,6 +10,7 @@ public class MyDynamicArray {
         data = new int[max_size];      // создаём массив на 2 ячейки
         size = 0;                      // пока элементов нет
     }
+
     //Метод add() — добавить элемент
     public void add(int value) {               // метод ничего не возвращает (void), принимает число value
         if (size == max_size) {                // если массив заполнен
@@ -26,6 +27,7 @@ public class MyDynamicArray {
         data[size] = value;                    // кладём новое значение в первую свободную ячейку
         size++;                                 // увеличиваем счётчик элементов
     }
+
     //Метод get() — получить элемент по индексу
     public int get(int index) {                             // метод возвращает int
         if (index < 0 || index >= size) {                   // если индекс вне границ
@@ -33,10 +35,12 @@ public class MyDynamicArray {
         }
         return data[index];                                 // возвращаем элемент
     }
+
     //Метод size() — узнать количество элементов
     public int size() {
         return size;      // просто возвращаем переменную size
     }
+
     //Метод print() — вывести массив на экран
     public void print() {
         System.out.print("[");                         // открывающая скобка
@@ -73,10 +77,11 @@ public class MyDynamicArray {
         // 4. (Опционально) последнюю ячейку обнуляем
         data[size] = 0;
     }
-    public static void main(String[] args) {
-        MyDynamicArray arr = new MyDynamicArray();
 
-        arr.add(10);
+    public static void main(String[] args) {
+       MyDynamicArray arr = new MyDynamicArray();
+
+       /* arr.add(10);
         arr.add(20);
         arr.add(30);
         arr.print();           // [10, 20, 30]
@@ -85,6 +90,37 @@ public class MyDynamicArray {
         arr.print();           // [10, 30]
 
         System.out.println("Размер: " + arr.size());     // 2
-        System.out.println("Пустой? " + arr.isEmpty());  // false
+        System.out.println("Пустой? " + arr.isEmpty());  // false   */
+        arr.add(10);
+        arr.add(20);
+        arr.add(30);
+        arr.print();  // [10, 20, 30]
+
+        arr.addingElementPosition(1, 99);
+        arr.print();  // [10, 99, 20, 30]
     }
+
+    public void addingElementPosition(int index, int value) {
+        if (index < 0 || index > size) {
+            throw new RuntimeException("Индекс вне границ");
+        }
+
+        if (size == max_size) {
+            max_size *= 2;
+            int[] newData = new int[max_size];
+            for (int i = 0; i < size; i++) {
+                newData[i] = data[i];
+            }
+            data = newData;
+        }
+
+        // Сдвиг вправо
+        for (int i = size; i > index; i--) {
+            data[i] = data[i - 1];
+        }
+
+        data[index] = value;
+        size++;
+    }
+
 }
