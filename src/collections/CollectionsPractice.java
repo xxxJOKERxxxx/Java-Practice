@@ -129,7 +129,8 @@ public class CollectionsPractice {
     }
 
     public static void size() {
-        ArrayList<String> list = new ArrayList<>();
 
     }
+
+
 }

@@ -119,11 +119,11 @@ public class MyDynamicArray {
         System.out.println(arr.contains(99));     // false
         arr.set(1, 99);
         arr.print();*/
-        arr.add(10);
-        arr.add(20);
-        int[] newNumbers = {30, 40, 50};
-        arr.addAll(newNumbers);
-        arr.print();
+       // arr.add(10);
+//        arr.add(20);
+//        int[] newNumbers = {30, 40, 50};
+//        arr.addAll(newNumbers);
+//        arr.print();
 
     }
 
@@ -197,5 +197,6 @@ public class MyDynamicArray {
             add(values[i]);
         }
     }
+
 
 }
