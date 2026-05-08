@@ -13,10 +13,10 @@ public class CollectionsPractice {
         //sumOfNumbers();
         //printBooks();
         // removeColors();
-        //replacePet();
-        //checkNumber();
-        //clear();
-        //clear1();
+        replacePet();
+        checkNumber();
+        clear();
+        clear1();
 
     }
     public static void friendsList() {
