@@ -32,6 +32,7 @@ public class CollectionsPractice {
     }
 
     public static void sumOfNumbers() {
+
         ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(5);
         numbers.add(10);
